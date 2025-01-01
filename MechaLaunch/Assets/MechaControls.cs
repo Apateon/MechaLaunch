@@ -136,7 +136,7 @@ public partial class @MechaControls: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""7a576997-d531-4e96-9f47-6b7b6d700a94"",
-                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""path"": ""<Gamepad>/{PrimaryAction}"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Controller"",
@@ -180,13 +180,40 @@ public partial class @MechaControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""AimLeft"",
+                    ""type"": ""Button"",
+                    ""id"": ""bc5b29f4-3cd9-48a0-8068-fa583d3dc988"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""AimRight"",
+                    ""type"": ""Button"",
+                    ""id"": ""104e98dd-094c-4e3a-b3ea-ca3f9b20b3cd"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Aiming"",
+                    ""type"": ""Value"",
+                    ""id"": ""7aa645c6-17b9-4dc8-9108-7d249f175fa9"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
                 {
                     ""name"": """",
                     ""id"": ""232544ae-ee19-4207-8e49-1128f30572b3"",
-                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""path"": ""<Gamepad>/{PrimaryAction}"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Controller"",
@@ -197,11 +224,77 @@ public partial class @MechaControls: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""fccc13c7-5c48-4a1d-a5df-eae96def6b81"",
-                    ""path"": ""<Mouse>/leftButton"",
+                    ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
                     ""action"": ""Fire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a1d9ada2-c27e-427a-8fc2-e113dfa99d00"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""AimLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8ba8233b-b0ea-4a53-8079-b1daf2c709b5"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""AimLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7086f2be-90c9-49c4-ba79-348031b1a7e6"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""AimRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b044ab0c-88e8-413e-966b-83d8676ed1c3"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""AimRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2a256ad0-10a0-4aad-9bfc-71b1a5b55999"",
+                    ""path"": ""<Mouse>/delta"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Aiming"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1e48a344-f707-431a-b28f-dd280c3780cf"",
+                    ""path"": ""<Gamepad>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": ""ScaleVector2(x=2,y=2)"",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Aiming"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -210,8 +303,147 @@ public partial class @MechaControls: IInputActionCollection2, IDisposable
         {
             ""name"": ""Energy"",
             ""id"": ""7e0a7e06-3fcc-4ef1-80c3-e3c733e76a22"",
-            ""actions"": [],
-            ""bindings"": []
+            ""actions"": [
+                {
+                    ""name"": ""Recharge"",
+                    ""type"": ""Button"",
+                    ""id"": ""6974e313-35d1-496a-b27c-a0ba6f0266ce"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""BatterySelect"",
+                    ""type"": ""Value"",
+                    ""id"": ""9c643055-47b3-4845-8e60-e9089c121bdf"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Heal"",
+                    ""type"": ""Button"",
+                    ""id"": ""6ea494cd-8dce-4e54-ba74-0982da9ce583"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""a84bd300-0f80-4236-b33b-365b4731b43a"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Recharge"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cc1a81ad-655d-4412-b504-3a0699fb3d04"",
+                    ""path"": ""<Gamepad>/{PrimaryAction}"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Recharge"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""Mouse"",
+                    ""id"": ""8c33dcce-978e-4742-980f-debb50f82844"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""BatterySelect"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""64ec8594-7d94-4513-9250-4b96415e5a87"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""BatterySelect"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""3c3d64c5-de26-4b29-901a-bd23f49badb0"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""BatterySelect"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Controller"",
+                    ""id"": ""34901654-73a3-48d8-9f65-47211d00349b"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""BatterySelect"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""aa8e0b16-3b19-4a45-ada1-7dafdc20e75b"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""BatterySelect"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""057d2d53-1c78-4508-9d6a-bb392cbb60dd"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""BatterySelect"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e5602009-a5b4-47f0-9c44-d44b22843357"",
+                    ""path"": ""<Keyboard>/shift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Heal"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c3e3161c-e149-463e-a66b-37d638fd5bf1"",
+                    ""path"": ""<Gamepad>/{SecondaryAction}"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Heal"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         },
         {
             ""name"": ""Lobby"",
@@ -452,8 +684,14 @@ public partial class @MechaControls: IInputActionCollection2, IDisposable
         // Shooting
         m_Shooting = asset.FindActionMap("Shooting", throwIfNotFound: true);
         m_Shooting_Fire = m_Shooting.FindAction("Fire", throwIfNotFound: true);
+        m_Shooting_AimLeft = m_Shooting.FindAction("AimLeft", throwIfNotFound: true);
+        m_Shooting_AimRight = m_Shooting.FindAction("AimRight", throwIfNotFound: true);
+        m_Shooting_Aiming = m_Shooting.FindAction("Aiming", throwIfNotFound: true);
         // Energy
         m_Energy = asset.FindActionMap("Energy", throwIfNotFound: true);
+        m_Energy_Recharge = m_Energy.FindAction("Recharge", throwIfNotFound: true);
+        m_Energy_BatterySelect = m_Energy.FindAction("BatterySelect", throwIfNotFound: true);
+        m_Energy_Heal = m_Energy.FindAction("Heal", throwIfNotFound: true);
         // Lobby
         m_Lobby = asset.FindActionMap("Lobby", throwIfNotFound: true);
         m_Lobby_Scroll = m_Lobby.FindAction("Scroll", throwIfNotFound: true);
@@ -583,11 +821,17 @@ public partial class @MechaControls: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Shooting;
     private List<IShootingActions> m_ShootingActionsCallbackInterfaces = new List<IShootingActions>();
     private readonly InputAction m_Shooting_Fire;
+    private readonly InputAction m_Shooting_AimLeft;
+    private readonly InputAction m_Shooting_AimRight;
+    private readonly InputAction m_Shooting_Aiming;
     public struct ShootingActions
     {
         private @MechaControls m_Wrapper;
         public ShootingActions(@MechaControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Fire => m_Wrapper.m_Shooting_Fire;
+        public InputAction @AimLeft => m_Wrapper.m_Shooting_AimLeft;
+        public InputAction @AimRight => m_Wrapper.m_Shooting_AimRight;
+        public InputAction @Aiming => m_Wrapper.m_Shooting_Aiming;
         public InputActionMap Get() { return m_Wrapper.m_Shooting; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -600,6 +844,15 @@ public partial class @MechaControls: IInputActionCollection2, IDisposable
             @Fire.started += instance.OnFire;
             @Fire.performed += instance.OnFire;
             @Fire.canceled += instance.OnFire;
+            @AimLeft.started += instance.OnAimLeft;
+            @AimLeft.performed += instance.OnAimLeft;
+            @AimLeft.canceled += instance.OnAimLeft;
+            @AimRight.started += instance.OnAimRight;
+            @AimRight.performed += instance.OnAimRight;
+            @AimRight.canceled += instance.OnAimRight;
+            @Aiming.started += instance.OnAiming;
+            @Aiming.performed += instance.OnAiming;
+            @Aiming.canceled += instance.OnAiming;
         }
 
         private void UnregisterCallbacks(IShootingActions instance)
@@ -607,6 +860,15 @@ public partial class @MechaControls: IInputActionCollection2, IDisposable
             @Fire.started -= instance.OnFire;
             @Fire.performed -= instance.OnFire;
             @Fire.canceled -= instance.OnFire;
+            @AimLeft.started -= instance.OnAimLeft;
+            @AimLeft.performed -= instance.OnAimLeft;
+            @AimLeft.canceled -= instance.OnAimLeft;
+            @AimRight.started -= instance.OnAimRight;
+            @AimRight.performed -= instance.OnAimRight;
+            @AimRight.canceled -= instance.OnAimRight;
+            @Aiming.started -= instance.OnAiming;
+            @Aiming.performed -= instance.OnAiming;
+            @Aiming.canceled -= instance.OnAiming;
         }
 
         public void RemoveCallbacks(IShootingActions instance)
@@ -628,10 +890,16 @@ public partial class @MechaControls: IInputActionCollection2, IDisposable
     // Energy
     private readonly InputActionMap m_Energy;
     private List<IEnergyActions> m_EnergyActionsCallbackInterfaces = new List<IEnergyActions>();
+    private readonly InputAction m_Energy_Recharge;
+    private readonly InputAction m_Energy_BatterySelect;
+    private readonly InputAction m_Energy_Heal;
     public struct EnergyActions
     {
         private @MechaControls m_Wrapper;
         public EnergyActions(@MechaControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Recharge => m_Wrapper.m_Energy_Recharge;
+        public InputAction @BatterySelect => m_Wrapper.m_Energy_BatterySelect;
+        public InputAction @Heal => m_Wrapper.m_Energy_Heal;
         public InputActionMap Get() { return m_Wrapper.m_Energy; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -641,10 +909,28 @@ public partial class @MechaControls: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_EnergyActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_EnergyActionsCallbackInterfaces.Add(instance);
+            @Recharge.started += instance.OnRecharge;
+            @Recharge.performed += instance.OnRecharge;
+            @Recharge.canceled += instance.OnRecharge;
+            @BatterySelect.started += instance.OnBatterySelect;
+            @BatterySelect.performed += instance.OnBatterySelect;
+            @BatterySelect.canceled += instance.OnBatterySelect;
+            @Heal.started += instance.OnHeal;
+            @Heal.performed += instance.OnHeal;
+            @Heal.canceled += instance.OnHeal;
         }
 
         private void UnregisterCallbacks(IEnergyActions instance)
         {
+            @Recharge.started -= instance.OnRecharge;
+            @Recharge.performed -= instance.OnRecharge;
+            @Recharge.canceled -= instance.OnRecharge;
+            @BatterySelect.started -= instance.OnBatterySelect;
+            @BatterySelect.performed -= instance.OnBatterySelect;
+            @BatterySelect.canceled -= instance.OnBatterySelect;
+            @Heal.started -= instance.OnHeal;
+            @Heal.performed -= instance.OnHeal;
+            @Heal.canceled -= instance.OnHeal;
         }
 
         public void RemoveCallbacks(IEnergyActions instance)
@@ -751,9 +1037,15 @@ public partial class @MechaControls: IInputActionCollection2, IDisposable
     public interface IShootingActions
     {
         void OnFire(InputAction.CallbackContext context);
+        void OnAimLeft(InputAction.CallbackContext context);
+        void OnAimRight(InputAction.CallbackContext context);
+        void OnAiming(InputAction.CallbackContext context);
     }
     public interface IEnergyActions
     {
+        void OnRecharge(InputAction.CallbackContext context);
+        void OnBatterySelect(InputAction.CallbackContext context);
+        void OnHeal(InputAction.CallbackContext context);
     }
     public interface ILobbyActions
     {

@@ -114,7 +114,7 @@
                 {
                     "name": "",
                     "id": "7a576997-d531-4e96-9f47-6b7b6d700a94",
-                    "path": "<Gamepad>/buttonSouth",
+                    "path": "<Gamepad>/{PrimaryAction}",
                     "interactions": "",
                     "processors": "",
                     "groups": "Controller",
@@ -158,13 +158,40 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "AimLeft",
+                    "type": "Button",
+                    "id": "bc5b29f4-3cd9-48a0-8068-fa583d3dc988",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "AimRight",
+                    "type": "Button",
+                    "id": "104e98dd-094c-4e3a-b3ea-ca3f9b20b3cd",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Aiming",
+                    "type": "Value",
+                    "id": "7aa645c6-17b9-4dc8-9108-7d249f175fa9",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
                 {
                     "name": "",
                     "id": "232544ae-ee19-4207-8e49-1128f30572b3",
-                    "path": "<Gamepad>/buttonSouth",
+                    "path": "<Gamepad>/{PrimaryAction}",
                     "interactions": "",
                     "processors": "",
                     "groups": "Controller",
@@ -175,11 +202,77 @@
                 {
                     "name": "",
                     "id": "fccc13c7-5c48-4a1d-a5df-eae96def6b81",
-                    "path": "<Mouse>/leftButton",
+                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
                     "action": "Fire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a1d9ada2-c27e-427a-8fc2-e113dfa99d00",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "AimLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8ba8233b-b0ea-4a53-8079-b1daf2c709b5",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "AimLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7086f2be-90c9-49c4-ba79-348031b1a7e6",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "AimRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b044ab0c-88e8-413e-966b-83d8676ed1c3",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "AimRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2a256ad0-10a0-4aad-9bfc-71b1a5b55999",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Aiming",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1e48a344-f707-431a-b28f-dd280c3780cf",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "ScaleVector2(x=2,y=2)",
+                    "groups": "Controller",
+                    "action": "Aiming",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -188,8 +281,147 @@
         {
             "name": "Energy",
             "id": "7e0a7e06-3fcc-4ef1-80c3-e3c733e76a22",
-            "actions": [],
-            "bindings": []
+            "actions": [
+                {
+                    "name": "Recharge",
+                    "type": "Button",
+                    "id": "6974e313-35d1-496a-b27c-a0ba6f0266ce",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "BatterySelect",
+                    "type": "Value",
+                    "id": "9c643055-47b3-4845-8e60-e9089c121bdf",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Heal",
+                    "type": "Button",
+                    "id": "6ea494cd-8dce-4e54-ba74-0982da9ce583",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "a84bd300-0f80-4236-b33b-365b4731b43a",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Recharge",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cc1a81ad-655d-4412-b504-3a0699fb3d04",
+                    "path": "<Gamepad>/{PrimaryAction}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "Recharge",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "Mouse",
+                    "id": "8c33dcce-978e-4742-980f-debb50f82844",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "BatterySelect",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "64ec8594-7d94-4513-9250-4b96415e5a87",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "BatterySelect",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "3c3d64c5-de26-4b29-901a-bd23f49badb0",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "BatterySelect",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Controller",
+                    "id": "34901654-73a3-48d8-9f65-47211d00349b",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "BatterySelect",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "aa8e0b16-3b19-4a45-ada1-7dafdc20e75b",
+                    "path": "<Gamepad>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "BatterySelect",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "057d2d53-1c78-4508-9d6a-bb392cbb60dd",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "BatterySelect",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "e5602009-a5b4-47f0-9c44-d44b22843357",
+                    "path": "<Keyboard>/shift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Heal",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c3e3161c-e149-463e-a66b-37d638fd5bf1",
+                    "path": "<Gamepad>/{SecondaryAction}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "Heal",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         },
         {
             "name": "Lobby",
