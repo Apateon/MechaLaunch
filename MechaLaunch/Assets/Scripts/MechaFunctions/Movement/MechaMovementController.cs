@@ -10,8 +10,10 @@ public class MechaMovementController : MonoBehaviour
 
     Transform mainCam;
 
-    Battery movingBattery;
+    Container movingBattery;
     float batteryDrain = 3f;
+
+    Container staminaContainer;
 
     private void Awake()
     {
@@ -33,9 +35,10 @@ public class MechaMovementController : MonoBehaviour
         }
     }
 
-    public void SetCockpit(Battery moving)
+    public void SetCockpit(Container moving, Container stamina)
     {
         movingBattery = moving;
+        staminaContainer = stamina;
     }
 
     private void HandleMovement()
@@ -50,15 +53,22 @@ public class MechaMovementController : MonoBehaviour
 
         if (inputVector.magnitude >= 0.1f)
         {
-            float sprintMult = sprint.IsPressed() ? 2.5f : 1;
+            float sprintMult = 1f;
+            if(sprint.IsPressed())
+            {
+                if(staminaContainer.CanDischarge(0.25f))
+                {
+                    sprintMult = 2.5f;
+                    staminaContainer.Discharge(0.25f, EventSender.MECHA);
+                }
+            }
             float speed = 5f;
 
             if(movingBattery.CanDischarge(batteryDrain * Time.deltaTime))
             {
                 mechaCharacterController.Move(moveVector * speed * Time.deltaTime * sprintMult);
-                movingBattery.Discharge(batteryDrain * Time.deltaTime);
+                movingBattery.Discharge(batteryDrain * Time.deltaTime, EventSender.MECHA);
             }
-
 
             transform.rotation = Quaternion.Euler(0f, mainCam.rotation.eulerAngles.y, 0f);
         }

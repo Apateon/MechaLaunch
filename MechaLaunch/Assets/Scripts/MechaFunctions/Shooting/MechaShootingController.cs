@@ -25,7 +25,7 @@ public class MechaShootingController : MonoBehaviour
 
     MonsterManager monsterKaiju;
 
-    Battery shootingBattery;
+    Container shootingBattery;
 
     public void SetGunner(InputActionAsset actionasset)
     {
@@ -44,7 +44,7 @@ public class MechaShootingController : MonoBehaviour
         //initialize armpons
     }
 
-    public void SetCockpit(Battery shooting, MonsterManager MainMonster)
+    public void SetCockpit(Container shooting, MonsterManager MainMonster)
     {
 
         monsterKaiju = MainMonster;
@@ -112,7 +112,7 @@ public class MechaShootingController : MonoBehaviour
                     {
                         if(leftWeapon.Fire(transform.position, aimDirection))
                         {
-                            shootingBattery.Discharge(leftWeapon.batteryDrain);
+                            shootingBattery.Discharge(leftWeapon.batteryDrain, EventSender.MECHA);
                         }
                     }
                 }
@@ -123,7 +123,7 @@ public class MechaShootingController : MonoBehaviour
                     {
                         if(rightWeapon.Fire(transform.position, aimDirection))
                         {
-                            shootingBattery.Discharge(rightWeapon.batteryDrain);
+                            shootingBattery.Discharge(rightWeapon.batteryDrain, EventSender.MECHA);
                         }
                     }
                 }

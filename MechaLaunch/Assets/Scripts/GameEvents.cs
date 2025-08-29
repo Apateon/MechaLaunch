@@ -5,22 +5,21 @@ using UnityEngine;
 
 public static class GameEvents
 {
-    public static event Action<float, BatteryType> OnBatteryCreated;
-    public static event Action<float, BatteryType> OnBatteryChanged;
-    public static event Action<BatteryType> ActiveBatteryChanged;
+    public static event Action<float, ContainerType, EventSender> OnContainerCreated;
+    public static event Action<float, ContainerType, EventSender> OnContainerValueChanged;
+    public static event Action<ContainerType> ActiveBatteryChanged;
 
-    public static void InvokeBatteryCreated(float maxCharge, BatteryType type)
+    public static void InvokeContainerCreated(float maxCharge, ContainerType type, EventSender sender)
     {
-        Debug.Log("Battery Created");
-        OnBatteryCreated?.Invoke(maxCharge, type);
+        OnContainerCreated?.Invoke(maxCharge, type, sender);
     }
 
-    public static void InvokeBatteryChange(float currentCharge, BatteryType type)
+    public static void InvokeContainerValueChange(float currentCharge, ContainerType type, EventSender sender)
     {
-        OnBatteryChanged?.Invoke(currentCharge, type);
+        OnContainerValueChanged?.Invoke(currentCharge, type, sender);
     }
 
-    public static void InvokeActiveBatteryChanged(BatteryType type)
+    public static void InvokeActiveBatteryChanged(ContainerType type)
     {
         ActiveBatteryChanged?.Invoke(type);
     }

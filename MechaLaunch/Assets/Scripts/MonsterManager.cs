@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class MonsterManager : MonoBehaviour
 {
 
-    float maxhealth = 100f;
+    float maxhealth = 1000f;
 
     float health;
 

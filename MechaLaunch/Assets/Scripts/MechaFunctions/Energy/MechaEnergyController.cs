@@ -10,13 +10,13 @@ public class MechaEnergyController : MonoBehaviour
     InputAction recharge;
     InputAction changeBattery;
 
-    Battery[] batteries = new Battery[3];
+    Container[] batteries = new Container[3];
 
     int activeBattery = 0;
 
     float baseRecharge = 1f;
 
-    public void InstallBatteries(Battery RepairBattery, Battery CombatBattery, Battery MovementBattery)
+    public void InstallBatteries(Container RepairBattery, Container CombatBattery, Container MovementBattery)
     {
         batteries[0] = CombatBattery; 
         batteries[1] = RepairBattery;
@@ -38,7 +38,7 @@ public class MechaEnergyController : MonoBehaviour
 
     private void Recharge(InputAction.CallbackContext context)
     {
-        batteries[activeBattery].Recharge(baseRecharge);
+        batteries[activeBattery].Recharge(baseRecharge, EventSender.MECHA);
     }
 
     private void ChangeBattery(InputAction.CallbackContext context)
@@ -51,6 +51,6 @@ public class MechaEnergyController : MonoBehaviour
         activeBattery += batteryChange;
         activeBattery = Mathf.Clamp(activeBattery, 0, 2);
 
-        GameEvents.InvokeActiveBatteryChanged(batteries[activeBattery].batteryType);
+        GameEvents.InvokeActiveBatteryChanged(batteries[activeBattery].containerType);
     }
 }

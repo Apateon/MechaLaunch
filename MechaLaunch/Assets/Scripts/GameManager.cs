@@ -41,12 +41,12 @@ public class GameManager : MonoBehaviour
 
         switch (input.playerIndex)
         {
-            case 0:
+            case 1:
                 Debug.Log("Movement set for player " + input.playerIndex);
                 player.Config(input.playerIndex, input.actions.FindActionMap("Movement"));
                 playerMecha.driverSeat.SetPilot(input.actions);
                 break;
-            case 1:
+            case 0:
                 Debug.Log("shooting set for player " + input.playerIndex);
                 player.Config(input.playerIndex, input.actions.FindActionMap("Shooting"));
                 playerMecha.gunnerSeat.SetGunner(input.actions);

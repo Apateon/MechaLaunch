@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class BatteryVisuals : MonoBehaviour
 {
     Slider batterySlider;
-    BatteryType batteryType;
+    ContainerType batteryType;
 
     Image activeMarker;
 
@@ -18,17 +18,17 @@ public class BatteryVisuals : MonoBehaviour
         activeMarker = transform.Find("ActiveMarker").GetComponent<Image>();
 
         //Get the type of battery that the UI is
-        String[] batteryTypes = Enum.GetNames(typeof(BatteryType));
+        String[] batteryTypes = Enum.GetNames(typeof(ContainerType));
         int underscoreNumber = this.name.LastIndexOf('_');
         String extract = this.name.Substring(underscoreNumber + 1);
-        batteryType = (BatteryType)Array.IndexOf(batteryTypes, extract);
+        batteryType = (ContainerType)Array.IndexOf(batteryTypes, extract);
 
-        GameEvents.OnBatteryCreated += BatteryInitialize;
-        GameEvents.OnBatteryChanged += ChargeChange;
+        GameEvents.OnContainerCreated += BatteryInitialize;
+        GameEvents.OnContainerValueChanged += ChargeChange;
         GameEvents.ActiveBatteryChanged += BatteryChange;
     }
 
-    private void BatteryInitialize(float maxCharge, BatteryType type)
+    private void BatteryInitialize(float maxCharge, ContainerType type, EventSender sender)
     {
         if (batteryType != type) return;
 
@@ -36,14 +36,14 @@ public class BatteryVisuals : MonoBehaviour
         batterySlider.value = maxCharge;
     }
 
-    private void ChargeChange(float charge, BatteryType type)
+    private void ChargeChange(float charge, ContainerType type, EventSender sender)
     {
         if (batteryType != type) return;
 
         batterySlider.value = charge;
     }
 
-    private void BatteryChange(BatteryType type)
+    private void BatteryChange(ContainerType type)
     {
         if (batteryType != type)
         {
@@ -56,7 +56,7 @@ public class BatteryVisuals : MonoBehaviour
 
     private void OnDestroy()
     {
-        GameEvents.OnBatteryCreated -= BatteryInitialize;
-        GameEvents.OnBatteryChanged -= ChargeChange;
+        GameEvents.OnContainerCreated -= BatteryInitialize;
+        GameEvents.OnContainerValueChanged -= ChargeChange;
     }
 }
